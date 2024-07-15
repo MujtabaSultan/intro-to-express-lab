@@ -80,7 +80,7 @@ app.get("/shoes", (req, res) => {
 
   trueArr.forEach((element) => {
     finalResult.push(
-      `<h1>name : ${element.name} , price : ${element.price}  , type : ${element.type} <br></h1>`
+      `<h1>name : ${element.name} , price : ${element.price}  , type : ${element.type}</h1>`
     );
   });
   res.send(`${finalResult.join("")}`);
