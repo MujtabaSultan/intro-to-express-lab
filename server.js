@@ -3,7 +3,6 @@ const app = express();
 
 app.get("/greet/:name", (req, res) => {
   res.send(`welcome ${req.params.name}`);
-  console.log(req.params.name);
 });
 
 app.get("/roll/:number", (req, res) => {
@@ -27,7 +26,6 @@ app.get("/collectibles/:loc", (req, res) => {
         collectibles[req.params.loc].price
       } `
     );
-    console.log(collectibles[req.params.loc]);
   } else {
     res.send("This item is not yet in stock. Check back soon!");
   }
@@ -54,7 +52,6 @@ app.get("/shoes", (req, res) => {
   let allArr = [];
 
   shoes.forEach((shoe) => {});
-  console.log(allArr);
   shoes.forEach((shoe) => {
     if (minPrice <= shoe.price) {
       loweredprice.push(shoe);
@@ -78,12 +75,12 @@ app.get("/shoes", (req, res) => {
   trueArr = workingArr.reduce((total, arr) => {
     return total.filter((x) => arr.includes(x));
   }, shoes);
-  console.log(trueArr);
+
   let finalResult = [];
 
   trueArr.forEach((element) => {
     finalResult.push(
-      `name : ${element.name} , price : ${element.price}  , type : ${element.type} <br>`
+      `<h1>name : ${element.name} , price : ${element.price}  , type : ${element.type} <br></h1>`
     );
   });
   res.send(`${finalResult.join("")}`);
